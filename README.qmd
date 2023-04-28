@@ -11,7 +11,7 @@ Choose your own adventure!
 
 In this directory is a vanilla JS project wrapped with Vite for easier playing around.
 
-Read back through some of my [WebR Experiments]() if you need a Vite refresher. You can also just reorg the files/code a bit to serve it from a simple web server. However, I suggest changing to the directory and:
+Read back through some of my [WebR Experiments](https://rud.is/webr-experiments/) if you need a Vite refresher. You can also just reorg the files/code a bit to serve it from a simple web server. However, I suggest changing to the directory and:
 
 ```bash
 npm init
