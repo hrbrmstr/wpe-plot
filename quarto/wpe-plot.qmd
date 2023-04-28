@@ -7,6 +7,7 @@ ojs_define(mpgR = ggplot2::mpg)
 ojs_define(mtcarsR = tibble::rownames_to_column(mtcars, "vehicle"))
 ojs_define(diamondsR = ggplot2::diamonds)
 ojs_define(faithfuldR = ggplot2::faithfuld)
+ojs_define(faithfulR = faithful)
 ```
 
 ```{ojs}
@@ -14,6 +15,7 @@ mpg = transpose(mpgR)
 mtcars = transpose(mtcarsR)
 diamonds = transpose(diamondsR);
 faithfuld = transpose(faithfuldR);
+faithful = transpose(faithfulR);
 
 defaultStyle = ({
 	backgroundColor: "#00000000",
@@ -136,6 +138,63 @@ Plot.plot({
 	]
 })
 ```
+
+```{ojs}
+Plot.plot({
+	style: defaultStyle,
+	marks: [
+		Plot.boxY(
+			mpg, 
+			{ x: "class", y: "hwy" }
+		)
+	],
+});
+```
+
+```{ojs}
+Plot.plot({
+	style: defaultStyle,
+	marks: [
+		Plot.dot(mpg, { x: "displ", y: "hwy" }),
+		Plot.linearRegressionY(mpg, {
+			x: "displ",
+			y: "hwy",
+			stroke: "red",
+		}),
+	],
+});
+```
+
+```{ojs}
+Plot.plot({
+	style: defaultStyle,
+	marginLeft: 50,
+	marginBottom:50,
+	marks: [
+		Plot.hexgrid(),
+		Plot.dot(
+			diamonds,
+			Plot.hexbin(
+				{ r: "count" },
+				{ x: "carat", y: "price", fill: "currentColor" }
+			)
+		),
+	],
+})
+```
+
+```{ojs}
+Plot.plot({
+	style: defaultStyle,
+	marginLeft: 50,
+	marginBottom: 50,
+	marks: [
+		Plot.density(faithful, { x: "eruptions", y: "waiting" }),
+		Plot.dot(faithful, { x: "eruptions", y: "waiting" }),
+	],
+});
+```
+
 
 <div id="manual-01"></div>
 

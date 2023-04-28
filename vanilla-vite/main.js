@@ -5,6 +5,7 @@ const mtcars = await d3.csv('./data/mtcars.csv', d3.autoType)
 const mpg = await d3.csv('./data/mpg.csv', d3.autoType)
 const diamonds = await d3.csv('./data/diamonds.csv', d3.autoType)
 const faithfuld = await d3.csv('./data/faithfuld.csv', d3.autoType)
+const faithful = await d3.csv('./data/faithful.csv', d3.autoType)
 
 const defaultStyle = {
 	backgroundColor: "#00000000"
@@ -211,9 +212,96 @@ geomRaster01.replaceChildren(
 	
 )
 
+const geomBoxplot01 = document.getElementById("geom-boxplot-01")
+
+geomBoxplot01.replaceChildren(
+
+	Plot.plot({
+		style: defaultStyle,
+		marks: [
+			Plot.boxY(
+				mpg,
+				{ x: "class", y: "hwy" }
+			)
+		]
+	})
+
+)
+
+const geomSmooth01 = document.getElementById("geom-smooth-01")
+
+geomSmooth01.replaceChildren(
+	Plot.plot({
+		style: defaultStyle,
+		marks: [
+			Plot.dot(
+				mpg,
+				{ x: "displ", y: "hwy" }
+			),
+			Plot.linearRegressionY(
+				mpg, {
+				x: "displ",
+				y: "hwy",
+				stroke: "red",
+			}),
+		],
+	})
+)
+
+const geomHexbin = document.getElementById("geom-hexbin-01")
+
+geomHexbin.replaceChildren(
+	Plot.plot({
+		style: defaultStyle,
+		marginLeft: 50,
+		marginBottom: 50,
+		marks: [
+			Plot.hexgrid(),
+			Plot.dot(
+				diamonds,
+				Plot.hexbin(
+					{ r: "count" },
+					{ x: "carat", y: "price", fill: "currentColor" }
+				)
+			),
+		],
+	})
+)
+
+const geomDensity = document.getElementById("geom-density-01")
+
+geomDensity.replaceChildren(
+	Plot.plot({
+		style: defaultStyle,
+		marginLeft: 50,
+		marginBottom: 50,
+		marks: [
+			Plot.density(
+				faithful,
+				{ x: "eruptions", y: "waiting"	}
+			),
+			Plot.dot(
+				faithful,
+				{ x: "eruptions", y: "waiting" }
+			),
+		],
+	})
+)
+//Plot.plot({
+// inset: 10,
+// 	marks: [
+// 		Plot.density(faithful, { x: "waiting", y: "eruptions", stroke: "steelblue", strokeWidth: 0.25 }),
+// 		Plot.density(faithful, { x: "waiting", y: "eruptions", stroke: "steelblue", thresholds: 4 }),
+// 		Plot.dot(faithful, { x: "waiting", y: "eruptions", fill: "currentColor", r: 1.5 })
+// 	]
+// })
+//ggplot(faithful, aes(x = eruptions, y = waiting)) + geom_point()
+
+
 // In case you need to debug anything
 
 globalThis.mtcars = mtcars
+globalThis.faithfuld = faithfuld
 globalThis.mpg = mpg
 globalThis.d3 = d3
 globalThis.Plot = Plot
