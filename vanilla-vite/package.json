@@ -1,0 +1,16 @@
+{
+  "name": "wpe-plot",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@observablehq/plot": "^0.6.6",
+    "d3": "^7.8.4",
+    "vite": "^4.3.2"
+  }
+}

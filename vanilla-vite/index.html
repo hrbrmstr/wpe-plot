@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Observable Plot Daily Drop WPE</title>
+	<meta name="description" content="Observable Plot Daily Drop WPE">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="neat.css">
+	<link rel="stylesheet" href="custom.css">
+	<script type="module" src="main.js"></script>
+</head>
+<body>
+	<pre><code>ggplot(mtcars, aes(wt, mpg, label = rownames(mtcars))) + geom_text()</code></pre>
+	<div id="geom-text-01"></div>
+	<pre><code>ggplot(mtcars, aes(wt, mpg, label = rownames(mtcars))) + geom_text(size = 10)</code></pre>
+	<div id="geom-text-02"></div>
+	<pre><code>ggplot(mtcars, aes(wt, mpg, label = rownames(mtcars))) + geom_point() + geom_text(hjust = 0, nudge_x = 0.05)</code></pre>
+	<div id="geom-text-03"></div>
+	<pre><code>ggplot(mtcars, aes(wt, mpg, label = rownames(mtcars))) + geom_point() + geom_text(vjust = 0, nudge_y = 0.5)</code></pre>
+	<div id="geom-text-04"></div>
+	<pre><code>ggplot(mtcars, aes(wt, mpg, label = rownames(mtcars))) + geom_point() + geom_text(angle = 45)</code></pre>
+	<div id="geom-text-05"></div>
+	<pre><code>ggplot(mtcars, aes(wt, mpg, label = rownames(mtcars))) + geom_text(aes(colour = factor(cyl)))</code></pre>
+	<div id="geom-text-06"></div>
+	<pre><code>ggplot(mtcars, aes(wt, mpg, label = rownames(mtcars))) + geom_text(aes(size = wt))</code></pre>
+	<div id="geom-text-07"></div>
+	<pre><code>ggplot(mtcars, aes(wt, mpg, label = rownames(mtcars))) + geom_text(aes(size = wt))</code></pre>
+	<div id="geom-text-07"></div>
+	<pre><code>ggplot(mpg, aes(class)) + geom_bar()</code></pre>
+	<div id="geom-col-01"></div>
+	<pre><code>ggplot(mpg) + geom_bar(aes(y = class))</code></pre>
+	<div id="geom-col-02"></div>
+	<pre><code>ggplot(mpg, aes(class)) + geom_bar(fill = drv)</code></pre>
+	<div id="geom-col-03"></div>
+	<pre><code>ggplot(diamonds, aes(carat, price)) d + geom_point(alpha=1/10)</code></pre>
+	<div id="geom-point-01"></div>
+	<pre><code>ggplot(faithfuld, aes(waiting, eruptions)) + geom_raster(aes(fill = density))</code></pre>
+	<div id="geom-raster-01"></div>
+</body>
+</html>
+
+
+
