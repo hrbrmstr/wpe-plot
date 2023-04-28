@@ -1,7 +1,7 @@
 # wpe-plot
 
 This is the companion repo to [this week’s Daily Drop Weekend Project
-Edition]().
+Edition](https://dailyfinds.hrbrmstr.dev/p/drop-250-2023-04-28-weekend-project).
 
 Choose your own adventure!
 
