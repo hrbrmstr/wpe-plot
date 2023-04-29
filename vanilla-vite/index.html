@@ -25,11 +25,14 @@
 </head>
 <body>
   <h1>Weekend Project Edition — Plot</h1>
+	<section id="intro">
   <p>Companion site to: <a target="_blank" href="https://dailyfinds.hrbrmstr.dev/p/drop-250-2023-04-28-weekend-project">https://dailyfinds.hrbrmstr.dev/p/drop-250-2023-04-28-weekend-project</a></p>
   <p><a target="_blank" href="https://observablehq.com/@hrbrmstr/2023-04-28-daily-drop-weekend-project-edition-observable-no">Observable Notebook version</a></p>
-  <pre><code class="language-r">ggplot(mtcars, aes(wt, mpg, label = rownames(mtcars))) + geom_text()</code></pre>
+	</section>
+  <pre class="ggplot2"><code class="language-r">ggplot(mtcars, aes(wt, mpg, label = rownames(mtcars))) + 
+  geom_text()</code></pre>
   <details>
-    <summary>Plot</summary>
+    <summary>Observable Plot code</summary>
     <pre><code class="language-js">Plot.plot({
   style: defaultStyle,
   grid: true,
@@ -43,9 +46,10 @@
   </details>
   <div id="geom-text-01"></div>
 
-  <pre><code class="language-r">ggplot(mtcars, aes(wt, mpg, label = rownames(mtcars))) + geom_text(size = 10)</code></pre>
+  <pre class="ggplot2"><code class="language-r">ggplot(mtcars, aes(wt, mpg, label = rownames(mtcars))) + 
+  geom_text(size = 10)</code></pre>
   <details>
-    <summary>Plot</summary>
+    <summary>Observable Plot code</summary>
     <pre><code class="language-js">Plot.plot({
   style: defaultStyle,
   grid: true,
@@ -59,9 +63,11 @@
   </details>
   <div id="geom-text-02"></div>
 
-  <pre><code class="language-r">ggplot(mtcars, aes(wt, mpg, label = rownames(mtcars))) + geom_point() + geom_text(hjust = 0, nudge_x = 0.05)</code></pre>
+  <pre class="ggplot2"><code class="language-r">ggplot(mtcars, aes(wt, mpg, label = rownames(mtcars))) + 
+  geom_point() + 
+  geom_text(hjust = 0, nudge_x = 0.05)</code></pre>
   <details>
-    <summary>Plot</summary>
+    <summary>Observable Plot code</summary>
     <pre><code class="language-js">Plot.plot({
   style: defaultStyle,
   grid: true,
@@ -79,9 +85,11 @@
   </details>
   <div id="geom-text-03"></div>
   
-  <pre><code class="language-r">ggplot(mtcars, aes(wt, mpg, label = rownames(mtcars))) + geom_point() + geom_text(vjust = 0, nudge_y = 0.5)</code></pre>
+  <pre class="ggplot2"><code class="language-r">ggplot(mtcars, aes(wt, mpg, label = rownames(mtcars))) + 
+  geom_point() + 
+  geom_text(vjust = 0, nudge_y = 0.5)</code></pre>
   <details>
-    <summary>Plot</summary>
+    <summary>Observable Plot code</summary>
     <pre><code class="language-js">Plot.plot({
   style: defaultStyle,
   grid: true,
@@ -99,9 +107,11 @@
   </details>
   <div id="geom-text-04"></div>
 
-  <pre><code class="language-r">ggplot(mtcars, aes(wt, mpg, label = rownames(mtcars))) + geom_point() + geom_text(angle = 45)</code></pre>
+  <pre class="ggplot2"><code class="language-r">ggplot(mtcars, aes(wt, mpg, label = rownames(mtcars))) +
+  geom_point() + 
+  geom_text(angle = 45)</code></pre>
   <details>
-    <summary>Plot</summary>
+    <summary>Observable Plot code</summary>
     <pre><code class="language-js">Plot.plot({
   style: defaultStyle,
   grid: true,
@@ -119,9 +129,10 @@
   </details>
   <div id="geom-text-05"></div>
 
-  <pre><code class="language-r">ggplot(mtcars, aes(wt, mpg, label = rownames(mtcars))) + geom_text(aes(colour = factor(cyl)))</code></pre>
+  <pre class="ggplot2"><code class="language-r">ggplot(mtcars, aes(wt, mpg, label = rownames(mtcars))) + 
+  geom_text(aes(colour = factor(cyl)))</code></pre>
   <details>
-    <summary>Plot</summary>
+    <summary>Observable Plot code</summary>
     <pre><code class="language-js">Plot.plot({
   style: defaultStyle,
   grid: true,
@@ -140,9 +151,10 @@
   </details>
   <div id="geom-text-06"></div>
 
-  <pre><code class="language-r">ggplot(mtcars, aes(wt, mpg, label = rownames(mtcars))) + geom_text(aes(size = wt))</code></pre>
+  <pre class="ggplot2"><code class="language-r">ggplot(mtcars, aes(wt, mpg, label = rownames(mtcars))) + 
+  geom_text(aes(size = wt))</code></pre>
   <details>
-    <summary>Plot</summary>
+    <summary>Observable Plot code</summary>
     <pre><code class="language-js">Plot.plot({
   style: defaultStyle,
   grid: true,
@@ -156,9 +168,10 @@
   </details>
   <div id="geom-text-07"></div>
 
-  <pre><code class="language-r">ggplot(mpg, aes(class)) + geom_bar()</code></pre>
+  <pre class="ggplot2"><code class="language-r">ggplot(mpg, aes(class)) + 
+  geom_bar()</code></pre>
   <details>
-    <summary>Plot</summary>
+    <summary>Observable Plot code</summary>
     <pre><code class="language-js">Plot.plot({
   style: defaultStyle,
   y: {
@@ -171,9 +184,10 @@
   </details>
   <div id="geom-col-01"></div>
 
-  <pre><code class="language-r">ggplot(mpg) + geom_bar(aes(y = class))</code></pre>
+  <pre class="ggplot2"><code class="language-r">ggplot(mpg) + 
+  geom_bar(aes(y = class))</code></pre>
   <details>
-    <summary>Plot</summary>
+    <summary>Observable Plot code</summary>
     <pre><code class="language-js">Plot.plot({
   style: defaultStyle,
   y: {
@@ -186,9 +200,10 @@
   </details>
   <div id="geom-col-02"></div>
 
-  <pre><code class="language-r">ggplot(mpg, aes(class)) + geom_bar(fill = drv)</code></pre>
+  <pre class="ggplot2"><code class="language-r">ggplot(mpg, aes(class)) + 
+  geom_bar(fill = drv)</code></pre>
   <details>
-    <summary>Plot</summary>
+    <summary>Observable Plot code</summary>
     <pre><code class="language-js">Plot.plot({
   style: defaultStyle,
   color: {
@@ -204,9 +219,10 @@
   </details>
   <div id="geom-col-03"></div>
 
-  <pre><code class="language-r">ggplot(diamonds, aes(carat, price)) d + geom_point(alpha=1/10)</code></pre>
+  <pre class="ggplot2"><code class="language-r">ggplot(diamonds, aes(carat, price)) + 
+  geom_point(alpha=1/10)</code></pre>
   <details>
-    <summary>Plot</summary>
+    <summary>Observable Plot code</summary>
     <pre><code class="language-js">Plot.plot({
   style: defaultStyle,
   grid: true,
@@ -221,9 +237,10 @@
   </details>
   <div id="geom-point-01"></div>
 
-  <pre><code class="language-r">ggplot(faithfuld, aes(waiting, eruptions)) + geom_raster(aes(fill = density))</code></pre>
+  <pre class="ggplot2"><code class="language-r">ggplot(faithfuld, aes(waiting, eruptions)) + 
+  geom_raster(aes(fill = density))</code></pre>
   <details>
-    <summary>Plot</summary>
+    <summary>Observable Plot code</summary>
     <pre><code class="language-js">Plot.plot({
   style: defaultStyle,
   marks: [
@@ -236,9 +253,10 @@
   </details>
   <div id="geom-raster-01"></div>
 
-  <pre><code class="language-r">ggplot(mpg, aes(class, hwy)) + geom_boxplot()</code></pre>
+  <pre class="ggplot2"><code class="language-r">ggplot(mpg, aes(class, hwy)) + 
+  geom_boxplot()</code></pre>
   <details>
-    <summary>Plot</summary>
+    <summary>Observable Plot code</summary>
     <pre><code class="language-js">Plot.plot({
   style: defaultStyle,
   marks: [
@@ -251,9 +269,11 @@
   </details>
   <div id="geom-boxplot-01"></div>
 
-  <pre><code class="language-r">ggplot(mpg, aes(displ, hwy)) + geom_point() + geom_smooth()</code></pre>
+  <pre class="ggplot2"><code class="language-r">ggplot(mpg, aes(displ, hwy)) + 
+  geom_point() + 
+  geom_smooth()</code></pre>
   <details>
-    <summary>Plot</summary>
+    <summary>Observable Plot code</summary>
     <pre><code class="language-js">Plot.plot({
   style: defaultStyle,
   marks: [
@@ -272,9 +292,10 @@
   </details>
   <div id="geom-smooth-01"></div>
 
-  <pre><code class="language-r">ggplot(diamonds, aes(carat, price)) + geom_hex()</code></pre>
+  <pre class="ggplot2"><code class="language-r">ggplot(diamonds, aes(carat, price)) + 
+  geom_hex()</code></pre>
   <details>
-    <summary>Plot</summary>
+    <summary>Observable Plot code</summary>
     <pre><code class="language-js">Plot.plot({
   style: defaultStyle,
   marginLeft: 50,
@@ -293,9 +314,10 @@
   </details>
   <div id="geom-hexbin-01"></div>
 
-  <pre><code class="language-r">ggplot(faithful, aes(x = eruptions, y = waiting)) + geom_point()</code></pre>
+  <pre class="ggplot2"><code class="language-r">ggplot(faithful, aes(x = eruptions, y = waiting)) + 
+  geom_point()</code></pre>
   <details>
-    <summary>Plot</summary>
+    <summary>Observable Plot code</summary>
     <pre><code class="language-js">Plot.plot({
   style: defaultStyle,
   marginLeft: 50,
@@ -314,9 +336,10 @@
   </details>
   <div id="geom-density-01"></div>
 
-  <pre><code class="language-r">ggplot(economics, aes(date, unemploy)) + geom_line()</code></pre>
+  <pre class="ggplot2"><code class="language-r">ggplot(economics, aes(date, unemploy)) + 
+  geom_line()</code></pre>
   <details>
-    <summary>Plot</summary>
+    <summary>Observable Plot code</summary>
     <pre><code class="language-js">Plot.plot({
   style: defaultStyle,
   grid: true,
@@ -330,9 +353,10 @@
   </details>
   <div id="geom-line-01"></div>
 
-  <pre><code class="language-r">ggplot(economics_long, aes(date, value01, colour = variable)) + geom_line()</code></pre>
+  <pre class="ggplot2"><code class="language-r">ggplot(economics_long, aes(date, value01, colour = variable)) + 
+  geom_line()</code></pre>
   <details>
-    <summary>Plot</summary>
+    <summary>Observable Plot code</summary>
     <pre><code class="language-js">Plot.plot({
   style: defaultStyle,
   grid: true,
@@ -349,9 +373,10 @@
   </details>
   <div id="geom-line-02"></div>
 
-  <pre><code class="language-r">ggplot(economics, aes(unemploy/pop, psavert)) + geom_path()</code></pre>
+  <pre class="ggplot2"><code class="language-r">ggplot(economics, aes(unemploy/pop, psavert)) + 
+  geom_path()</code></pre>
   <details>
-    <summary>Plot</summary>
+    <summary>Observable Plot code</summary>
     <pre><code class="language-js">Plot.plot({
   style: defaultStyle,
   grid: true,
@@ -370,7 +395,7 @@
   </details>
   <div id="geom-line-03"></div>
 
-  <pre><code class="language-r">ggplot(mtcars, aes(wt, mpg)) +
+  <pre class="ggplot2"><code class="language-r">ggplot(mtcars, aes(wt, mpg)) +
   geom_point() +
   geom_segment(
     data = data.frame(x1 = 2.62, x2 = 3.57, y1 = 21.0, y2 = 15.0),
@@ -378,7 +403,7 @@
   )
 )</code></pre>
   <details>
-    <summary>Plot</summary>
+    <summary>Observable Plot code</summary>
     <pre><code class="language-js">Plot.plot({
   style: defaultStyle,
   grid: true,

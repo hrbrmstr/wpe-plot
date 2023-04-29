@@ -42,6 +42,25 @@ html, button, input {
 }
 
 [class^="plot-"][class$="-ramp"] {
-	background: #00000000;
+	background: none;
 	background-color: #00000000;
+}
+
+details {
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+}
+
+summary {
+	color: #9f6c66;
+}
+
+pre.ggplot2 {
+	border-top: 1px solid #586c5c;
+	border-bottom: 1px solid #586c5c;
+	margin-top: 3rem;
+}
+
+section#intro {
+	margin-bottom: 2rem;
 }
