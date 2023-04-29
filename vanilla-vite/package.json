@@ -8,9 +8,21 @@
     "build": "vite build",
     "preview": "vite preview"
   },
+  "dependencies": {
+    "@observablehq/plot": "^0.6.6",
+    "d3": "^7.8.4"
+  },
+  "engines": {
+    "node": "18.x"
+  },
   "devDependencies": {
     "@observablehq/plot": "^0.6.6",
     "d3": "^7.8.4",
-    "vite": "^4.3.2"
+    "vite": "^4.3.2",
+		"vite-plugin-top-level-await": "^1.3.0",
+		"vite-plugin-cdn-import": "^0.3.5",
+    "vite-plugin-webfont-dl": "^3.6.4",
+    "rollup": "^3.20.4",
+    "rollup-plugin-url-resolve": "^0.2.0"
   }
 }

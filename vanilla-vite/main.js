@@ -6,6 +6,8 @@ const mpg = await d3.csv('./data/mpg.csv', d3.autoType)
 const diamonds = await d3.csv('./data/diamonds.csv', d3.autoType)
 const faithfuld = await d3.csv('./data/faithfuld.csv', d3.autoType)
 const faithful = await d3.csv('./data/faithful.csv', d3.autoType)
+const economics = await d3.csv('./data/economics.csv', d3.autoType)
+const economicsLong = await d3.csv('./data/economics-long.csv', d3.autoType)
 
 const defaultStyle = {
 	backgroundColor: "#00000000"
@@ -21,7 +23,7 @@ geomText01.replaceChildren(
 			Plot.text(
 				mtcars,
 				{ x: "wt", y: "mpg", text: "vehicle" }
-		  )
+			)
 		]
 	})
 )
@@ -118,7 +120,6 @@ geomText06.replaceChildren(
 	})
 )
 
-
 const geomText07 = document.getElementById("geom-text-07")
 
 geomText07.replaceChildren(
@@ -134,15 +135,14 @@ geomText07.replaceChildren(
 	})
 )
 
-
 const geomCol01 = document.getElementById("geom-col-01")
 
 geomCol01.replaceChildren(
 	Plot.plot({
 		style: defaultStyle,
 		y: {
-		  grid: true,
-	  }, 
+			grid: true,
+		}, 
 		marks: [
 			Plot.auto(mpg, { x: "class", y: { reduce: "count" }, mark: "bar" })
 		]
@@ -199,7 +199,6 @@ geomPoint01.replaceChildren(
 const geomRaster01 = document.getElementById("geom-raster-01")
 
 geomRaster01.replaceChildren(
-
 	Plot.plot({
 		style: defaultStyle,
 		marks: [
@@ -209,13 +208,11 @@ geomRaster01.replaceChildren(
 			)
 		]
 	})
-	
 )
 
 const geomBoxplot01 = document.getElementById("geom-boxplot-01")
 
 geomBoxplot01.replaceChildren(
-
 	Plot.plot({
 		style: defaultStyle,
 		marks: [
@@ -225,7 +222,6 @@ geomBoxplot01.replaceChildren(
 			)
 		]
 	})
-
 )
 
 const geomSmooth01 = document.getElementById("geom-smooth-01")
@@ -268,9 +264,9 @@ geomHexbin.replaceChildren(
 	})
 )
 
-const geomDensity = document.getElementById("geom-density-01")
+const geomDensity01 = document.getElementById("geom-density-01")
 
-geomDensity.replaceChildren(
+geomDensity01.replaceChildren(
 	Plot.plot({
 		style: defaultStyle,
 		marginLeft: 50,
@@ -287,15 +283,80 @@ geomDensity.replaceChildren(
 		],
 	})
 )
-//Plot.plot({
-// inset: 10,
-// 	marks: [
-// 		Plot.density(faithful, { x: "waiting", y: "eruptions", stroke: "steelblue", strokeWidth: 0.25 }),
-// 		Plot.density(faithful, { x: "waiting", y: "eruptions", stroke: "steelblue", thresholds: 4 }),
-// 		Plot.dot(faithful, { x: "waiting", y: "eruptions", fill: "currentColor", r: 1.5 })
-// 	]
-// })
-//ggplot(faithful, aes(x = eruptions, y = waiting)) + geom_point()
+
+const geomLine01 = document.getElementById("geom-line-01")
+
+geomLine01.replaceChildren(
+	Plot.plot({
+		style: defaultStyle,
+		grid: true,
+		marks: [
+			Plot.line(
+				economics,
+				{ x: "date", y: "unemploy" }
+			)
+		],
+	})
+)
+
+const geomLine02 = document.getElementById("geom-line-02")
+
+geomLine02.replaceChildren(
+	Plot.plot({
+		style: defaultStyle,
+		grid: true,
+		color: {
+			legend: true
+		},
+		marks: [
+			Plot.line(
+				economicsLong,
+				{ x: "date", y: "value01", stroke: "variable" }
+			)
+		],
+	})
+)
+
+const geomLine03 = document.getElementById("geom-line-03")
+
+geomLine03.replaceChildren(
+	Plot.plot({
+		style: defaultStyle,
+		grid: true,
+		color: {
+			legend: true
+		},
+		marks: [
+			Plot.line(economics, {
+				x: (d) => d.unemploy / d.pop,
+				y: "psavert",
+				z: null,
+				stroke: (d) => d.date
+			})
+		]
+	})
+)
+
+const geomSegment01 = document.getElementById("geom-segment-01")
+
+geomSegment01.replaceChildren(
+	Plot.plot({
+		style: defaultStyle,
+		grid: true,
+		color: {
+			legend: true
+		},
+		marks: [
+			Plot.dot(mtcars, { x: "wt", y: "mpg" }),
+			Plot.link([ { x1: 2.62, x2: 3.57, y1: 21.0, y2: 15.0 } ], {
+				x1: "x1",
+				x2: "x2",
+				y1: "y1",
+				y2: "y2"
+			})
+		]
+	})
+)
 
 
 // In case you need to debug anything

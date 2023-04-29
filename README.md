@@ -5,6 +5,12 @@ Edition](https://dailyfinds.hrbrmstr.dev/p/drop-250-2023-04-28-weekend-project).
 
 Choose your own adventure!
 
+## Observable
+
+I made [this
+notebook](https://observablehq.com/@hrbrmstr/2023-04-28-daily-drop-weekend-project-edition-observable-no)
+that includes all the data and examples used by both local projects.
+
 ## vanilla-vite
 
 In this directory is a vanilla JS project wrapped with Vite for easier

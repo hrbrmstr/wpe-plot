@@ -1,13 +1,19 @@
 ---
 title: "Daily Drop WPE: Plot"
 format: html
+theme:
+  light: flatly
+  dark: darkly
 ---
+
 ```{r}
 ojs_define(mpgR = ggplot2::mpg)
 ojs_define(mtcarsR = tibble::rownames_to_column(mtcars, "vehicle"))
 ojs_define(diamondsR = ggplot2::diamonds)
 ojs_define(faithfuldR = ggplot2::faithfuld)
 ojs_define(faithfulR = faithful)
+ojs_define(economicsR = ggplot2::economics)
+ojs_define(economicsLongR = ggplot2::economics_long)
 ```
 
 ```{ojs}
@@ -16,6 +22,8 @@ mtcars = transpose(mtcarsR)
 diamonds = transpose(diamondsR);
 faithfuld = transpose(faithfuldR);
 faithful = transpose(faithfulR);
+economics = transpose(economicsR);
+economicsLong = transpose(economicsLongR);
 
 defaultStyle = ({
 	backgroundColor: "#00000000",
@@ -195,6 +203,65 @@ Plot.plot({
 });
 ```
 
+```{ojs}
+Plot.plot({
+	style: defaultStyle,
+	grid: true,
+	marks: [Plot.line(economics, { x: "date", y: "unemploy" })],
+});
+```
+
+```{ojs}
+Plot.plot({
+	style: defaultStyle,
+	grid: true,
+	color: {
+		legend: true,
+	},
+	marks: [
+		Plot.line(economicsLong, { x: "date", y: "value01", stroke: "variable" }),
+	],
+});
+```
+
+```{ojs}
+Plot.plot({
+	style: defaultStyle,
+	grid: true,
+	color: {
+		legend: true,
+	},
+	marks: [
+		Plot.line(
+		economics.map(d => { d.date = new Date(d.date); return d }), 
+		{
+			x: (d) => d.unemploy / d.pop,
+			y: "psavert",
+			z: null,
+			stroke: "date"
+		}),
+	],
+});
+```
+
+```{ojs}
+Plot.plot({
+		style: defaultStyle,
+		grid: true,
+		color: {
+			legend: true
+		},
+		marks: [
+			Plot.dot(mtcars, { x: "wt", y: "mpg" }),
+			Plot.link([ { x1: 2.62, x2: 3.57, y1: 21.0, y2: 15.0 } ], {
+				x1: "x1",
+				x2: "x2",
+				y1: "y1",
+				y2: "y2"
+			})
+		]
+	})
+```
 
 <div id="manual-01"></div>
 
@@ -272,3 +339,11 @@ manual04.replaceChildren(
   })
 )
 </script>
+
+
+<style>
+[class*="plot-"] {
+	background: none;
+	background-color: #00000000;
+}
+</style>

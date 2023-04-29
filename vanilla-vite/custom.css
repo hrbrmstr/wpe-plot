@@ -40,3 +40,8 @@ html, button, input {
 	background-color: #471337;
 	height: 600px;
 }
+
+[class^="plot-"][class$="-ramp"] {
+	background: #00000000;
+	background-color: #00000000;
+}
